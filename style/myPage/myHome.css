@@ -204,22 +204,26 @@ section {
     color: white;
 }
 
-.various h3 {
+.var {
+    margin-bottom: 50px;
+}
+
+.var h3 {
     font-size: 24px;
     font-weight: 400;
 }
 
-.variousTitle {
+.varTitle {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #ddd;
     padding-bottom: 14px;
 }
 
 .allView {
     position: relative;
     padding-right: 18px;
+    font-size: 14px;
 }
 
 .allView::after {
@@ -241,6 +245,7 @@ section {
     justify-content: space-between;
     align-items: center;
     padding: 22px 20px;
+    border-top: 1px solid #ddd;
     background-color: #F8F8F8;
 }
 
@@ -250,20 +255,24 @@ section {
     column-gap: 10px;
 }
 
+.orderHeader > div > p {
+    font-size: 14px;
+}
+
 .orderDate {
+    font-size: 14px;
     font-weight: 600;
 }
 
 .orderNo {
-    font-size: 14px;
+    font-size: 12px !important;
     color: #999;
-    margin-bottom: 1px;
 }
 
 .detailView {
     position: relative;
-    padding-right: 18px;
-    font-size: 14px;
+    padding-right: 16px;
+    font-size: 13px;
 }
 
 .detailView::after {
@@ -271,15 +280,196 @@ section {
     position: absolute;
     top: 50%;
     right: 0;
-    width: 12px;
-    height: 12px;
-    margin-top: -6px;
+    width: 11px;
+    height: 11px;
+    margin-top: -5px;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 100% 100%;
     background-image: url("/images/allView.png");
 }
 
+.orderItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 40px;
+}
+
+.itemDetail {
+    display: flex;
+}
+
+.itemImg {
+    margin-right: 12px;
+}
+
+.itemImg > img {
+    width: 80px;
+}
+
+.itemTitle {
+    display: flex;
+    column-gap: 6px;
+}
+
+.itemCompany {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.itemName {
+    font-size: 14px;
+}
+
+.itemOption {
+    display: flex;
+    padding: 10px 0;
+}
+
+.itemOption p {
+    font-size: 13px;
+    color: #666;
+}
+
+.itemPrice {
+    display: flex;
+    align-items: center;
+}
+
+.itemPrice p {
+    font-size: 12px;
+    margin-left: 1px;
+}
+
+.itemPrice span {
+    font-size: 12px;
+    color: #999;
+}
+
+.orderManagement {
+    display: flex;
+    column-gap: 60px;
+}
+
+.orderStatus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 6px;
+}
+
+.orderStatus h4 {
+    color: #4185ed;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.orderStatus p {
+    font-size: 13px;
+    color: #888;
+}
+
+.orderButtons {
+    display: flex;
+    width: 120px;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.orderButtons a {
+    width: inherit;
+}
+
+.orderButtons button {
+    width: inherit;
+    height: 36px;
+    border: 1px solid #ebebeb;
+    background-color: white;
+    font-size: 13px;
+}
+
+.pointList h4 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pointList table {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+.pointList table tr:first-child {
+    background-color: #f8f8f8;
+}
+
+.pointList table tr {
+    height: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.pointList table td {
+    width: 200px;
+}
+
+.pointList table th {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pointList table td {
+    text-align: center;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+.reviewList table {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    border-collapse: collapse;
+    
+}
+
+.reviewList table tr:first-child {
+    background-color: #f8f8f8;
+}
+
+.reviewList table tr {
+    height: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.reviewList table td:nth-of-type(1) {
+    width: 80px;
+}
+
+.reviewList table td:nth-of-type(2) {
+    width: 150px;
+}
+
+.reviewList table td:nth-of-type(3) {
+    width: 470px;
+}
+
+.reviewList table td {
+    width: 150px;
+}
+
+
+.reviewList table th {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.reviewList table td {
+    text-align: center;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
 .bold {
     font-weight: 700;
 }
+
+    
