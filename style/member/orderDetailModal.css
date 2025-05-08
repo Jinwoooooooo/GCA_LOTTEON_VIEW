@@ -1,0 +1,165 @@
+#modalControl {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+#orderDetailModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.modalHeader {
+    width: 100%;
+    height: 64px;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    background-image: linear-gradient(266deg, #ff597e, #e96f5d);
+    border-radius: 6px 6px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    color: white;
+}
+
+.closeBtn {
+    background-image: url("../../images/closeBtnWhite.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: inherit;
+    background-size: 18px 18px;
+    width: 18px;
+    height: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.modalBody {
+    width: 100%;
+    padding: 6px 16px 6px 16px;
+    box-sizing: border-box;
+    border: 1px solid #e7e7e7;
+    border-radius: 0 0 6px 6px;
+}
+
+.modalBody h4 {
+    margin: 20px 0 0 0px;
+    padding-bottom: 16px;
+    font-size: 18px;
+    font-weight: 400;
+    border-bottom: 1px solid #ddd;
+}
+
+.modalBody > div:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.productInfo {
+    display: flex;
+    column-gap: 30px;
+    padding: 30px 16px;
+}
+
+.productInfo img {
+    width: 150px;
+    height: 150px;
+}
+
+.productDetailInfo {
+    width: 100%;
+}
+
+.productDetailInfo > div {
+    font-size: 14px;
+    display: flex;
+    column-gap: 6px;
+    margin-bottom: 2px;
+}
+
+.productDetailInfo > div:first-child {
+    justify-content: space-between;
+    color: #555;
+}
+
+.productDetailInfo > div:last-child > div {
+    display: flex;
+    align-items: center;
+}
+
+.productDetailInfo > div > p {
+    margin: 0;
+}
+
+.productDetailInfo > div:last-child > div:last-child {
+    margin-left: 6px;
+}
+
+.productDetailInfo > div:last-child > div:last-child > p {
+    color: #555;
+    font-size: 13px;
+    margin-right: 2px;
+}
+
+.orderPrice > p:first-child {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.orderPrice > p:last-child {
+    font-size: 13px;
+    margin: 1px 0 0 1px;
+}
+
+.paymentInfo {
+    padding: 14px 16px;
+}
+
+.paymentInfo > table {
+    width: 100%;
+}
+
+.paymentInfo > table tr > td {
+    height: 30px;
+}
+
+.paymentInfo > table tr > td:first-child {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.paymentInfo > table tr > td:last-child {
+    text-align: right;
+    font-size: 14px;
+    color: #111;
+}
+
+.howmuchisit {
+    color: #e60012 !important;
+    font-weight: 700;
+}
+
+.mop {
+    letter-spacing: 0.4px;
+}
+
+.sellerName {
+    font-weight: 700;
+}
+
+

@@ -204,8 +204,8 @@ section {
     color: white;
 }
 
-.var {
-    margin-bottom: 50px;
+.var:not(:last-child) {
+    margin-bottom: 60px;
 }
 
 .var h3 {
@@ -463,6 +463,89 @@ section {
 }
 
 .reviewList table td {
+    text-align: center;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+.helpList table {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    border-collapse: collapse;
+    
+}
+
+.helpList table tr:first-child {
+    background-color: #f8f8f8;
+}
+
+.helpList table tr {
+    height: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.helpList table td {
+    width: 100px;
+}
+
+.helpList table td:nth-of-type(3) {
+    width: 130px;
+}
+
+.helpList table td:nth-of-type(4) {
+    width: 410px;
+}
+
+.helpList table td:nth-of-type(5), .helpList table td:nth-of-type(6) {
+    width: 130px;
+}
+
+
+.helpList table th {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.helpList table td {
+    text-align: center;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+.productServiceList table {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    border-collapse: collapse;
+    
+}
+
+.productServiceList table tr:first-child {
+    background-color: #f8f8f8;
+}
+
+.productServiceList table tr {
+    height: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.productServiceList table td:nth-of-type(1) {
+    width: 100px;
+}
+
+.productServiceList table td:nth-of-type(2) {
+    width: 130px;
+}
+
+.productServiceList table td:nth-of-type(4), .productServiceList table td:nth-of-type(5) {
+    width: 130px;
+}
+
+.productServiceList table th {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.productServiceList table td {
     text-align: center;
     font-size: 13px;
     padding: 10px 0;
