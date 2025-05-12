@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Pretendard Font -->
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+        />
+
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            sizes="32x32"
+            href="https://static.lotteon.com/p/common/assets/favicon/1/favicon-32.png"
+        />
+
+        <!-- Style -->
+        <link rel="stylesheet" href="/style/member/orderDetailModal.css" />
+        <title>회원가입 : 롯데ON</title>
+    </head>
+    <body>
+        <div id="modalControl">
+            <div id="writeReview2">
+                <div class="modalHeader">
+                    <p>리뷰 작성</p>
+                    <button class="closeBtn"></button>
+                </div>
+                <div class="modalBody">
+                    <h4>리뷰 작성하기</h4>
+                    <div class="writeReview2">
+                        <form action="#">
+                            <input type="hidden" name="writer" />
+                            <input type="hidden" name="productCode" />
+                            <table>
+                                <tr>
+                                    <td>상품명</td>
+                                    <td>봄바르디로 크로코딜로</td>
+                                </tr>
+                                <tr>
+                                    <td>별점</td>
+                                    <td>
+                                        <div class="rating">
+                                            <span class="star" data-value="1"
+                                                >★</span
+                                            >
+                                            <span class="star" data-value="2"
+                                                >★</span
+                                            >
+                                            <span class="star" data-value="3"
+                                                >★</span
+                                            >
+                                            <span class="star" data-value="4"
+                                                >★</span
+                                            >
+                                            <span class="star" data-value="5"
+                                                >★</span
+                                            >
+                                            <input
+                                                type="hidden"
+                                                name="rating"
+                                                id="rating"
+                                            />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>제목</td>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="title"
+                                            placeholder="제목을 입력하세요."
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>내용</td>
+                                    <td>
+                                        <textarea
+                                            name="content"
+                                            placeholder="내용을 입력하세요."
+                                        ></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>사진</td>
+                                    <td>
+                                        <div class="file-upload-wrapper">
+                                            <div>
+                                                <label
+                                                    for="file1"
+                                                    class="custom-file-upload"
+                                                    >파일1 선택</label
+                                                >
+                                                <span class="file-name"
+                                                    >선택된 파일 없음</span
+                                                >
+                                                <input
+                                                    type="file"
+                                                    id="file1"
+                                                    class="hidden-file-input"
+                                                />
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    크기 190x190, 상품 목록에
+                                                    출력될 이미지 입니다.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="file-upload-wrapper">
+                                            <div>
+                                                <label
+                                                    for="file2"
+                                                    class="custom-file-upload"
+                                                    >파일2 선택</label
+                                                >
+                                                <span class="file-name"
+                                                    >선택된 파일 없음</span
+                                                >
+                                                <input
+                                                    type="file"
+                                                    id="file2"
+                                                    class="hidden-file-input"
+                                                />
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    크기 230x230, 상품 메인에
+                                                    출력될 이미지 입니다.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="file-upload-wrapper">
+                                            <div>
+                                                <label
+                                                    for="file3"
+                                                    class="custom-file-upload"
+                                                    >파일3 선택</label
+                                                >
+                                                <span class="file-name"
+                                                    >선택된 파일 없음</span
+                                                >
+                                                <input
+                                                    type="file"
+                                                    id="file3"
+                                                    class="hidden-file-input"
+                                                />
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    크기 456x456, 상품 상세에
+                                                    출력될 이미지 입니다.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="review2Btn">
+                                <button>취소</button>
+                                <button>작성</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document
+                .querySelectorAll(".file-upload-wrapper")
+                .forEach((wrapper) => {
+                    const input = wrapper.querySelector('input[type="file"]');
+                    const fileNameDisplay = wrapper.querySelector(".file-name");
+
+                    input.addEventListener("change", function () {
+                        fileNameDisplay.textContent =
+                            input.files.length > 0
+                                ? input.files[0].name
+                                : "선택된 파일 없음";
+                    });
+                });
+            const mop = document.querySelector(".mop");
+            mop.textContent = mop.textContent.toUpperCase();
+        </script>
+    </body>
+</html>
