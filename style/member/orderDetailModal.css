@@ -1,4 +1,4 @@
-#modalControl {
+.modalControl {
     display: block;
     position: fixed;
     top: 0;
@@ -10,6 +10,7 @@
 }
 
 #orderDetailModal {
+    display: block;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -25,6 +26,7 @@
 }
 
 #okPurchase {
+    display: block;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -40,6 +42,7 @@
 }
 
 #writeReview2 {
+    display: block;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -55,6 +58,7 @@
 }
 
 #changeModal {
+    display: block;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -70,12 +74,45 @@
 }
 
 #refundModal {
+    display: block;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0 auto;
     width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 6px;
+}
+
+#companyInfoModal {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 6px;
+}
+
+#contactModal {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,6 +131,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 18px;
+    color: white;
+}
+
+.modalHeader p {
     font-size: 18px;
     color: white;
 }
@@ -150,6 +192,7 @@
     display: flex;
     align-items: center;
     column-gap: 6px;
+    margin-bottom: 6px;
 }
 
 .productDetailInfo > div:first-child {
@@ -164,6 +207,7 @@
 
 .productDetailInfo > div > p {
     margin: 0;
+    font-size: 13px;
 }
 
 .productDetailInfo > div:last-child > div:last-child {
@@ -226,6 +270,7 @@
 .okPurchase p {
     margin: 0;
     font-size: 13px;
+    padding-bottom: 6px;
     color: #222;
 }
 
@@ -383,7 +428,10 @@
 }
 
 .custom-file-upload {
-    padding: 6px 12px;
+    display: inline-block;
+    width: 75px;
+    padding: 6px 0px;
+    text-align: center;
     background-color: #d15e4f;
     color: white;
     border-radius: 3px;
@@ -465,8 +513,6 @@
     width: 20%;
 }
 
-/* ----------------------------------------------------- */
-
 .refundModal * {
     font-size: 13px;
 }
@@ -501,6 +547,93 @@
 .refundModal table tr:nth-of-type(3) td:nth-of-type(3),
 .refundModal table tr:nth-of-type(4) td:nth-of-type(3) {
     width: 20%;
+}
+
+.companyInfoModal {
+    margin-top: 14px;
+}
+
+.companyInfoModal * {
+    font-size: 13px;
+}
+
+.companyInfoModal table {
+    width: 100%;
+}
+
+.companyInfoModal table td {
+    height: 46px;
+}
+
+.companyInfoModal table td:first-child {
+    width: 27%;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 30px;
+}
+
+
+.contactModal {
+    margin-top: 14px;
+}
+
+.contactModal * {
+    font-size: 13px;
+}
+
+.contactModal table {
+    width: 100%;
+}
+
+.contactModal table td {
+    height: 46px;
+}
+
+.contactModal table td:first-child {
+    width: 17%;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 20px;
+}
+
+.contactModal select {
+    width: 95%;
+    height: 34px;
+    padding-left: 8.5px;
+    outline: none;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 13px;
+    color: #333;
+    appearance: none;
+    background-color: white;
+    background-image: url("../../images/icon_footer_family.svg");
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.contactModal input {
+    width: 95%;
+    height: 34px;
+    font-size: 13px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.contactModal textarea {
+    width: 95%;
+    padding: 10px;
+    height: 200px;
+    font-size: 13px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    outline: none;
+    resize: none;
+    border: 1px solid #ccc;
+    font-family: "Pretendard Variable", Pretendard, sans-serif;
 }
 
 .writeReview .sellerName {

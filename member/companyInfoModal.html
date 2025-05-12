@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Pretendard Font -->
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+        />
+
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            sizes="32x32"
+            href="https://static.lotteon.com/p/common/assets/favicon/1/favicon-32.png"
+        />
+
+        <!-- Style -->
+        <link rel="stylesheet" href="/style/member/orderDetailModal.css" />
+        <title>회원가입 : 롯데ON</title>
+    </head>
+    <body>
+        <div th:each="seller, i : ${recentOrder}" th:id="'company-popup-' + ${i.index}" class="modalControl">
+            <div id="companyInfoModal">
+                <div class="modalHeader">
+                    <p>회사 정보</p>
+                    <button class="closeBtn"></button>
+                </div>
+                <div class="modalBody">
+                    <div class="companyInfoModal">
+                        <table>
+                            <tr>
+                                <td>판매자 등급</td>
+                                <td>[[${seller.rating}]]</td>
+                            </tr>
+                            <tr>
+                                <td>회사명</td>
+                                <td>[[${seller.companyName}]]</td>
+                            </tr>
+                            <tr>
+                                <td>대표자</td>
+                                <td>[[${seller.delegate}]]</td>
+                            </tr>
+                            <tr>
+                                <td>연락처</td>
+                                <td>[[${seller.hp}]]</td>
+                            </tr>
+                            <tr>
+                                <td>FAX</td>
+                                <td>[[${seller.fax}]]</td>
+                            </tr>
+                            <tr>
+                                <td>사업자 번호</td>
+                                <td>[[${seller.businessNo}]]</td>
+                            </tr>
+                            <tr>
+                                <td>영업 소재지</td>
+                                <td>[[${seller.zip}]] &nbsp; [[${seller.addr1}]], &nbsp; [[${seller.addr2}]]</td>
+                            </tr>
+                        </table>
+                        <div class="review2Btn">
+                            <button th:onclick="'closePopup(' + ${i.index} + ')'" type="button">닫기</button>
+                            <button type="button" th:onclick="'showInquiryPopup(' + ${i.index} + ')'">문의하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -24,42 +24,31 @@
         <title>회원가입 : 롯데ON</title>
     </head>
     <body>
-        <div id="modalControl">
+        <div th:each="order, i : ${recentOrder}" th:id="'review-popup-' + ${i.index}" class="modalControl">
             <div id="writeReview2">
                 <div class="modalHeader">
                     <p>리뷰 작성</p>
                     <button class="closeBtn"></button>
                 </div>
                 <div class="modalBody">
-                    <h4>리뷰 작성하기</h4>
                     <div class="writeReview2">
-                        <form action="#">
-                            <input type="hidden" name="writer" />
-                            <input type="hidden" name="productCode" />
+                        <form action="/myPage/my_review_write" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="productCode" th:value="${order.productCode}" />
+                            <input type="hidden" name="writer" th:value="${#authentication.principal.member.id}" />
                             <table>
                                 <tr>
                                     <td>상품명</td>
-                                    <td>봄바르디로 크로코딜로</td>
+                                    <td>[[${order.productName}]]</td>
                                 </tr>
                                 <tr>
                                     <td>별점</td>
                                     <td>
                                         <div class="rating">
-                                            <span class="star" data-value="1"
-                                                >★</span
-                                            >
-                                            <span class="star" data-value="2"
-                                                >★</span
-                                            >
-                                            <span class="star" data-value="3"
-                                                >★</span
-                                            >
-                                            <span class="star" data-value="4"
-                                                >★</span
-                                            >
-                                            <span class="star" data-value="5"
-                                                >★</span
-                                            >
+                                            <span class="star" data-value="1">&#9733;</span>
+                                            <span class="star" data-value="2">&#9733;</span>
+                                            <span class="star" data-value="3">&#9733;</span>
+                                            <span class="star" data-value="4">&#9733;</span>
+                                            <span class="star" data-value="5">&#9733;</span>
                                             <input
                                                 type="hidden"
                                                 name="rating"
@@ -103,6 +92,7 @@
                                                 <input
                                                     type="file"
                                                     id="file1"
+                                                    name="imageList1"
                                                     class="hidden-file-input"
                                                 />
                                             </div>
@@ -126,6 +116,7 @@
                                                 <input
                                                     type="file"
                                                     id="file2"
+                                                    name="imageList2"
                                                     class="hidden-file-input"
                                                 />
                                             </div>
@@ -150,6 +141,7 @@
                                                 <input
                                                     type="file"
                                                     id="file3"
+                                                    name="imageList3"
                                                     class="hidden-file-input"
                                                 />
                                             </div>
@@ -164,8 +156,8 @@
                                 </tr>
                             </table>
                             <div class="review2Btn">
-                                <button>취소</button>
-                                <button>작성</button>
+                                <button th:onclick="'closePopup(' + ${i.index} + ')'">취소</button>
+                                <button type="submit">작성</button>
                             </div>
                         </form>
                     </div>

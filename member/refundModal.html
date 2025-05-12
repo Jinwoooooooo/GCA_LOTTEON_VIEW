@@ -24,7 +24,7 @@
         <title>회원가입 : 롯데ON</title>
     </head>
     <body>
-        <div id="modalControl">
+        <div th:each="order, i : ${recentOrder}" th:id="'refund-popup-' + ${i.index}" class="modalControl">
             <div id="refundModal">
                 <div class="modalHeader">
                     <p>반품 신청</p>
@@ -33,31 +33,32 @@
                 <div class="modalBody">
                     <h4>상품 정보</h4>
                     <div class="refundModal">
-                        <form action="#">
+                        <form action="/myPage/my_refund" method="post">
+                            <input type="hidden" name="writer" th:value="${#authentication.principal.member.id}">
                             <table>
                                 <tr>
                                     <td>주문번호</td>
-                                    <td>1</td>
+                                    <td>[[${order.orderCode}]]</td>
                                     <td>주문 일자</td>
-                                    <td>1</td>
+                                    <td>[[${order.orderDate}]]</td>
                                 </tr>
                                 <tr>
                                     <td>판매자</td>
-                                    <td>1</td>
+                                    <td>[[${order.companyName}]]</td>
                                     <td>상품명</td>
-                                    <td>1</td>
+                                    <td>[[${order.productName}]]&nbsp;/&nbsp;[[${order.quantity}]]개</td>
                                 </tr>
                                 <tr>
                                     <td>결제금액</td>
-                                    <td>1</td>
+                                    <td>[[${order.actualMoney}]]원</td>
                                     <td>배송비</td>
-                                    <td>1</td>
+                                    <td>[[${order.fee}]]원</td>
                                 </tr>
                                 <tr>
                                     <td>결제수단</td>
-                                    <td>1</td>
+                                    <td>[[${order.payment}]]</td>
                                     <td>최종 반품금액</td>
-                                    <td>1</td>
+                                    <td>-[[${order.actualMoney}]]원</td>
                                 </tr>
                                 <tr>
                                     <td>반품정보 입력</td>
@@ -140,7 +141,7 @@
                                     <td>반품사유</td>
                                     <td colspan="3">
                                         <textarea
-                                            name=""
+                                            name="reason"
                                             placeholder="반품 사유를 자세히 작성해 주세요."
                                         ></textarea>
                                     </td>
@@ -162,6 +163,7 @@
                                                     <input
                                                         type="file"
                                                         id="file1"
+                                                        name="imageList1"
                                                         class="hidden-file-input"
                                                     />
                                                 </div>
@@ -179,6 +181,7 @@
                                                     <input
                                                         type="file"
                                                         id="file2"
+                                                        name="imageList2"
                                                         class="hidden-file-input"
                                                     />
                                                 </div>
@@ -197,6 +200,7 @@
                                                     <input
                                                         type="file"
                                                         id="file3"
+                                                        name="imageList3"
                                                         class="hidden-file-input"
                                                     />
                                                 </div>
@@ -205,10 +209,9 @@
                                     </td>
                                 </tr>
                             </table>
-
                             <div class="review2Btn">
-                                <button>취소</button>
-                                <button>반품 신청</button>
+                                <button th:onclick="'closePopup(' + ${i.index} + ')'">취소</button>
+                                <button type="submit">반품 신청</button>
                             </div>
                         </form>
                     </div>

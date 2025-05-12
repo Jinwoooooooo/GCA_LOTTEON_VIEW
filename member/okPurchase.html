@@ -24,31 +24,30 @@
         <title>회원가입 : 롯데ON</title>
     </head>
     <body>
-        <div id="modalControl">
+        <div th:each="order, i : ${recentOrder}" th:id="'confirm-popup-' + ${i.index}" class="modalControl">
             <div id="okPurchase">
                 <div class="modalHeader">
                     <p>구매 확정</p>
                     <button class="closeBtn"></button>
                 </div>
                 <div class="modalBody">
-                    <div class="okPurchase">
-                        <p>상품을 받으셨나요?</p>
-                        <p>상품을 받으셨다면 구매확정으로 변경해 주세요.</p>
-                        <p>
-                            <span>*</span>구매확정 후에는 반품 또는 교환이
-                            어렵습니다.
-                        </p>
-                        <div>
-                            <button>취소</button>
-                            <button>확인</button>
+                    <form action="/myPage/my_confirm" method="post">
+                        <input type="hidden" name="orderCode" th:value="${order.orderCode}">
+                        <div class="okPurchase">
+                            <p>상품을 받으셨나요?</p>
+                            <p>상품을 받으셨다면 구매확정으로 변경해 주세요.</p>
+                            <p>
+                                <span>*</span>구매확정 후에는 반품 또는 교환이
+                                어렵습니다.
+                            </p>
+                            <div>
+                                <button th:onclick="'closePopup(' + ${i.index} + ')'">취소</button>
+                                <button type="submit">확인</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <script>
-            const mop = document.querySelector(".mop");
-            mop.textContent = mop.textContent.toUpperCase();
-        </script>
     </body>
 </html>
